@@ -1,0 +1,6 @@
+name: Vanish
+main: com.ulfric.vanish.Vanish
+version: 1.0.0
+author: Ulfric Projects
+load: STARTUP
+depend: [Platform, Is]
