@@ -1,0 +1,2 @@
+# vanish
+Minecraft vanish plugin
