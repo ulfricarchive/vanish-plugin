@@ -2,8 +2,8 @@ package com.ulfric.vanish.scoreboard;
 
 import org.bukkit.entity.Player;
 
-import com.ulfric.monty.Element;
-import com.ulfric.monty.Text;
+import com.ulfric.monty.element.Element;
+import com.ulfric.monty.text.Text;
 import com.ulfric.servix.services.locale.LocaleService;
 import com.ulfric.servix.services.vanish.VanishService;
 
