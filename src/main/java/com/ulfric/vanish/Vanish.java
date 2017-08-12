@@ -1,6 +1,6 @@
 package com.ulfric.vanish;
 
-import com.ulfric.platform.Plugin;
+import com.ulfric.plugin.Plugin;
 import com.ulfric.vanish.command.UnvanishCommand;
 import com.ulfric.vanish.command.VanishCommand;
 import com.ulfric.vanish.scoreboard.VanishScoreboardListener;

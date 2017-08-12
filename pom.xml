@@ -6,7 +6,7 @@
 
 	<parent>
 		<groupId>com.ulfric.parent</groupId>
-		<artifactId>minecraft</artifactId>
+		<artifactId>plugin</artifactId>
 		<version>1.0.0</version>
 	</parent>
 
@@ -16,32 +16,14 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ulfric.andrew</groupId>
-			<artifactId>andrew</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.ulfric.platform</groupId>
-			<artifactId>platform</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.ulfric.servix</groupId>
-			<artifactId>servix</artifactId>
+			<groupId>com.ulfric.plugin</groupId>
+			<artifactId>plugin</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.ulfric.is</groupId>
 			<artifactId>is</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.ulfric.monty</groupId>
-			<artifactId>monty</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
