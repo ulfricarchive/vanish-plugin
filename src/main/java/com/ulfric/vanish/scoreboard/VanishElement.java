@@ -2,6 +2,7 @@ package com.ulfric.vanish.scoreboard;
 
 import org.bukkit.entity.Player;
 
+import com.ulfric.fancymessage.Message;
 import com.ulfric.monty.element.Element;
 import com.ulfric.monty.text.Text;
 import com.ulfric.servix.services.locale.LocaleService;
@@ -19,11 +20,11 @@ public class VanishElement extends Element {
 			return null;
 		}
 
-		String message = LocaleService.getMessage(player, "vanish-scoreboard");
-		if (message == null) {
+		if (!vanish.isVanished(player.getUniqueId())) {
 			return null;
 		}
 
+		String message = Message.toLegacy(LocaleService.getMessage(player, "vanish-scoreboard"));
 		Text text = new Text();
 		text.setBody(Collections.singletonList(message));
 		return text;
