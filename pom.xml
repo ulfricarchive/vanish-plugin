@@ -20,12 +20,6 @@
 			<artifactId>plugin</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.ulfric.is</groupId>
-			<artifactId>is</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 	</dependencies>
 
 </project>
