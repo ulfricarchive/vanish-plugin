@@ -1,12 +1,12 @@
-package com.ulfric.vanish.scoreboard;
+package com.ulfric.plugin.vanish.scoreboard;
 
 import org.bukkit.entity.Player;
 
 import com.ulfric.fancymessage.Message;
 import com.ulfric.monty.element.Element;
 import com.ulfric.monty.text.Text;
-import com.ulfric.servix.services.locale.LocaleService;
-import com.ulfric.servix.services.vanish.VanishService;
+import com.ulfric.plugin.locale.LocaleService;
+import com.ulfric.plugin.vanish.VanishService;
 
 import java.util.Collections;
 

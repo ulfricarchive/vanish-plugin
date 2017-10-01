@@ -1,12 +1,12 @@
-package com.ulfric.vanish.scoreboard;
+package com.ulfric.plugin.vanish.scoreboard;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import com.ulfric.monty.Scoreboard;
-import com.ulfric.servix.services.vanish.PlayerUnvanishEvent;
-import com.ulfric.servix.services.vanish.PlayerVanishEvent;
+import com.ulfric.plugin.vanish.PlayerUnvanishEvent;
+import com.ulfric.plugin.vanish.PlayerVanishEvent;
 
 public class VanishScoreboardListener implements Listener {
 

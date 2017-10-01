@@ -1,4 +1,4 @@
-package com.ulfric.vanish;
+package com.ulfric.plugin.vanish;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -6,9 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 
-import com.ulfric.embargo.entity.User;
-import com.ulfric.embargo.limit.Limit;
-import com.ulfric.servix.services.vanish.VanishService;
+import com.ulfric.commons.permissions.entity.User;
+import com.ulfric.commons.permissions.limit.Limit;
 
 import java.util.UUID;
 

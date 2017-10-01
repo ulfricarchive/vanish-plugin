@@ -1,15 +1,11 @@
-package com.ulfric.vanish;
+package com.ulfric.plugin.vanish;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import com.ulfric.data.database.Data;
-import com.ulfric.data.database.Database;
-import com.ulfric.data.database.Store;
-import com.ulfric.embargo.entity.User;
-import com.ulfric.embargo.limit.Limit;
-import com.ulfric.servix.ServiceApplication;
-import com.ulfric.servix.services.vanish.VanishService;
+import com.ulfric.commons.permissions.entity.User;
+import com.ulfric.commons.permissions.limit.Limit;
+import com.ulfric.plugin.services.ServiceApplication;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,27 +15,6 @@ public class TieredVanish extends ServiceApplication implements VanishService { 
 
 	private final Set<UUID> vanished = new HashSet<>(); // TODO make vanish persistent
 
-	@Database
-	private Store users;
-
-	public TieredVanish() {
-		addBootHook(this::loadUserData);
-	}
-
-	private void loadUserData() {
-		users.getAllData()
-			.forEach(this::loadUserData);
-	}
-
-	private void loadUserData(Data data) {
-		boolean vanished = data.getBoolean("vanished");
-
-		if (vanished) {
-			UUID uniqueId = data.getUniqueId("uniqueId");
-			this.vanished.add(uniqueId);
-		}
-	}
-
 	@Override
 	public Class<VanishService> getService() {
 		return VanishService.class;
@@ -47,9 +22,7 @@ public class TieredVanish extends ServiceApplication implements VanishService { 
 
 	@Override
 	public void vanish(UUID uniqueId) {
-		if (vanished.add(uniqueId)) {
-			writeData(uniqueId, true);
-		}
+		vanished.add(uniqueId);
 
 		Player vanisher = Bukkit.getPlayer(uniqueId);
 		User vanishingUser = User.getUser(uniqueId);
@@ -77,7 +50,6 @@ public class TieredVanish extends ServiceApplication implements VanishService { 
 	@Override
 	public void unvanish(UUID uniqueId) {
 		if (vanished.remove(uniqueId)) {
-			writeData(uniqueId, false);
 			Player vanisher = Bukkit.getPlayer(uniqueId);
 
 			if (vanisher == null) {
@@ -92,12 +64,6 @@ public class TieredVanish extends ServiceApplication implements VanishService { 
 				online.showPlayer(vanisher);
 			}
 		}
-	}
-
-	private void writeData(UUID uniqueId, boolean vanished) {
-		Data data = users.getData(uniqueId);
-		data.set("uniqueId", uniqueId);
-		data.setBoolean("vanished", true);
 	}
 
 	@Override

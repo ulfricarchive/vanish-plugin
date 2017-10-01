@@ -1,13 +1,13 @@
-package com.ulfric.vanish;
+package com.ulfric.plugin.vanish;
 
 import com.ulfric.plugin.Plugin;
-import com.ulfric.vanish.command.UnvanishCommand;
-import com.ulfric.vanish.command.VanishCommand;
-import com.ulfric.vanish.scoreboard.VanishScoreboardListener;
+import com.ulfric.plugin.vanish.command.UnvanishCommand;
+import com.ulfric.plugin.vanish.command.VanishCommand;
+import com.ulfric.plugin.vanish.scoreboard.VanishScoreboardListener;
 
-public class Vanish extends Plugin {
+public class VanishPlugin extends Plugin {
 
-	public Vanish() {
+	public VanishPlugin() {
 		install(TieredVanish.class);
 
 		install(VanishListener.class);

@@ -1,11 +1,11 @@
-package com.ulfric.vanish.command;
+package com.ulfric.plugin.vanish.command;
 
-import com.ulfric.andrew.Alias;
-import com.ulfric.andrew.Command;
-import com.ulfric.andrew.Context;
-import com.ulfric.andrew.Permission;
-import com.ulfric.andrew.Sync;
 import com.ulfric.commons.naming.Name;
+import com.ulfric.plugin.commands.Alias;
+import com.ulfric.plugin.commands.Command;
+import com.ulfric.plugin.commands.Context;
+import com.ulfric.plugin.commands.Permission;
+import com.ulfric.plugin.commands.Sync;
 
 @Sync
 @Name("unvanish")

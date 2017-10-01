@@ -1,6 +1,6 @@
 name: Vanish
-main: com.ulfric.vanish.Vanish
+main: com.ulfric.plugin.vanish.VanishPlugin
 version: 1.0.0
-author: Ulfric Projects
+author: Ulfric LLC
 load: STARTUP
-depend: [Platform]
+depend: [Services, Scoreboard, Commands]

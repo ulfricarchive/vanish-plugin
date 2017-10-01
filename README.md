@@ -1,2 +1,2 @@
-# vanish
-Minecraft vanish plugin
+# vanish-plugin
+Bukkit vanish plugin
