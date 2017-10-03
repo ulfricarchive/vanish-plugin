@@ -2,5 +2,4 @@ name: Vanish
 main: com.ulfric.plugin.vanish.VanishPlugin
 version: 1.0.0
 author: Ulfric LLC
-load: STARTUP
-depend: [Services, Scoreboard, Commands]
+depend: [Platform, Services, Scoreboard, Commands, Permissions, Locale]
