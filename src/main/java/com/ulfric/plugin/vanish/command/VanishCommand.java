@@ -5,9 +5,7 @@ import com.ulfric.plugin.commands.Alias;
 import com.ulfric.plugin.commands.Command;
 import com.ulfric.plugin.commands.Context;
 import com.ulfric.plugin.commands.Permission;
-import com.ulfric.plugin.commands.Sync;
 
-@Sync
 @Name("vanish")
 @Alias("v")
 @Permission("vanish.vanish")
