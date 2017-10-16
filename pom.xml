@@ -23,13 +23,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.ulfric.commons</groupId>
-			<artifactId>commons-permissions</artifactId>
-			<version>1.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>com.ulfric.plugin</groupId>
 			<artifactId>services-plugin</artifactId>
 			<version>1.0.0</version>
@@ -53,6 +46,13 @@
 		<dependency>
 			<groupId>com.ulfric.plugin</groupId>
 			<artifactId>locale-plugin</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ulfric.plugin</groupId>
+			<artifactId>permissions-plugin</artifactId>
 			<version>1.0.0</version>
 			<scope>provided</scope>
 		</dependency>
