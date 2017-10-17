@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 
 import com.ulfric.commons.permissions.limit.Limit;
@@ -16,6 +17,22 @@ public class VanishListener implements Listener {
 	@Inject
 	private UserLookup lookup;
 
+	@Inject
+	private VanishService vanish;
+
+	@EventHandler
+	public void on(AsyncPlayerPreLoginEvent event) {
+		if (event.getLoginResult() != AsyncPlayerPreLoginEvent.Result.ALLOWED) {
+			return;
+		}
+
+		pretouchLimit(event.getUniqueId());
+	}
+
+	private void pretouchLimit(UUID uniqueId) {
+		lookupLimit(uniqueId);
+	}
+
 	@VanishSLA
 	@EventHandler
 	public void on(PlayerLoginEvent event) {
@@ -23,21 +40,17 @@ public class VanishListener implements Listener {
 			return;
 		}
 
-		VanishService service = VanishService.get();
-		if (service == null) {
-			return;
-		}
-
 		Player loggingIn = event.getPlayer();
 		UUID uniqueId = loggingIn.getUniqueId();
-		if (service.isVanished(uniqueId)) {
-			service.vanish(uniqueId);
+		if (vanish.isVanished(uniqueId)) {
+			vanish.vanish(uniqueId);
 		}
 
-		Limit visionLevel = lookup.lookupUser(uniqueId).getLimit("vanish");
+		Limit visionLevel = lookupLimit(uniqueId);
 		for (Player online : Bukkit.getOnlinePlayers()) {
-			if (service.isVanished(online.getUniqueId())) {
-				Limit vanishLevel = lookup.lookupUser(online.getUniqueId()).getLimit("vanish");
+			UUID onlineUniqueId = online.getUniqueId();
+			if (vanish.isVanished(onlineUniqueId)) {
+				Limit vanishLevel = lookupLimit(onlineUniqueId);
 
 				if (visionLevel.isWithinBounds(vanishLevel)) {
 					continue;
@@ -46,6 +59,10 @@ public class VanishListener implements Listener {
 				online.hidePlayer(loggingIn);
 			}
 		}
+	}
+
+	private Limit lookupLimit(UUID uniqueId) {
+		return lookup.lookupUser(uniqueId).getLimit("vanish");
 	}
 
 }
