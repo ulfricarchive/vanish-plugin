@@ -5,12 +5,17 @@ import org.bukkit.entity.Player;
 import com.ulfric.fancymessage.Message;
 import com.ulfric.plugin.locale.LocaleService;
 import com.ulfric.plugin.vanish.VanishService;
+import com.ulfric.plugin.widgets.StandardDashboardType;
 import com.ulfric.plugin.widgets.Widget;
 import com.ulfric.plugin.widgets.text.Text;
 
 import java.util.Collections;
 
 public class VanishWidget extends Widget {
+
+	public VanishWidget() {
+		super(StandardDashboardType.SCOREBOARD);
+	}
 
 	@Override
 	public Text apply(Player player) {
