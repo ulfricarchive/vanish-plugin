@@ -1,16 +1,16 @@
-package com.ulfric.plugin.vanish.scoreboard;
+package com.ulfric.plugin.vanish.widget;
 
 import org.bukkit.entity.Player;
 
 import com.ulfric.fancymessage.Message;
 import com.ulfric.plugin.locale.LocaleService;
-import com.ulfric.plugin.scoreboard.element.Element;
-import com.ulfric.plugin.scoreboard.text.Text;
 import com.ulfric.plugin.vanish.VanishService;
+import com.ulfric.plugin.widgets.Widget;
+import com.ulfric.plugin.widgets.text.Text;
 
 import java.util.Collections;
 
-public class VanishElement extends Element {
+public class VanishWidget extends Widget {
 
 	@Override
 	public Text apply(Player player) {
@@ -24,7 +24,7 @@ public class VanishElement extends Element {
 			return null;
 		}
 
-		String message = Message.toLegacy(LocaleService.getMessage(player, "vanish-scoreboard"));
+		String message = Message.toLegacy(LocaleService.getMessage(player, "vanish-widget"));
 		Text text = new Text();
 		text.setBody(Collections.singletonList(message));
 		return text;
