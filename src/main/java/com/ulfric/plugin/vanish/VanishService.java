@@ -1,8 +1,8 @@
 package com.ulfric.plugin.vanish;
 
-import com.ulfric.plugin.services.Service;
-
 import java.util.UUID;
+
+import com.ulfric.plugin.services.Service;
 
 public interface VanishService extends Service<VanishService> {
 

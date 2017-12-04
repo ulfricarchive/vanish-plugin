@@ -1,5 +1,7 @@
 package com.ulfric.plugin.vanish.widget;
 
+import java.util.Collections;
+
 import org.bukkit.entity.Player;
 
 import com.ulfric.fancymessage.Message;
@@ -8,8 +10,6 @@ import com.ulfric.plugin.vanish.VanishService;
 import com.ulfric.plugin.widgets.StandardDashboardType;
 import com.ulfric.plugin.widgets.Widget;
 import com.ulfric.plugin.widgets.text.Text;
-
-import java.util.Collections;
 
 public class VanishWidget extends Widget {
 

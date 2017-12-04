@@ -5,7 +5,7 @@ import java.util.UUID;
 import com.ulfric.commons.naming.Name;
 import com.ulfric.plugin.commands.Alias;
 import com.ulfric.plugin.commands.Command;
-import com.ulfric.plugin.commands.Permission;
+import com.ulfric.plugin.commands.permissions.Permission;
 import com.ulfric.plugin.vanish.VanishService;
 
 @Name("unvanish")
