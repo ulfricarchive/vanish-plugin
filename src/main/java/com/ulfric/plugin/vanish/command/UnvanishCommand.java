@@ -10,7 +10,7 @@ import com.ulfric.plugin.vanish.VanishService;
 
 @Name("unvanish")
 @Alias("unv")
-@Permission("vanish.unvanish")
+@Permission("vanish-unvanish")
 public class UnvanishCommand extends Command {
 
 	@Override
