@@ -16,13 +16,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ulfric.dragoon</groupId>
-			<artifactId>rethink-dragoon</artifactId>
-			<version>1.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>com.ulfric.plugin</groupId>
 			<artifactId>services-plugin</artifactId>
 			<version>1.0.0</version>
